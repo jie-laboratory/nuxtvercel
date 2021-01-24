@@ -59,15 +59,16 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
+    proxy: true,
     credentials: true,
-    baseURL: 'http://localhost:8000/api/',
   },
-  // proxy: {
-  //   '/test': {
-  //     target: 'http://localhost:8000',
-  //     pathRewrite: { '^/test': '/' },
-  //   },
-  // },
+
+  proxy: {
+    '/laravel': {
+      target: 'http://localhost:8000',
+      pathRewrite: { '^/laravel': '/' },
+    },
+  },
 
   router: {
     middleware: ['auth'],

@@ -1,14 +1,6 @@
 <template>
-  <div class="container">
-    tseter
-    <div>
-      <Logo />
-      <button @click="logout">Logout</button>
-      <h1 class="title">client</h1>
-      <pre>
-        {{ $auth.user }}
-      </pre>
-    </div>
+  <div>
+    <button @click="logout">Logout</button>
   </div>
 </template>
 
@@ -16,9 +8,9 @@
 export default {
   methods: {
     async logout() {
-      const vm = this
-      await this.$auth.logout({ params: vm.$auth.user })
-      this.$router.push('/login')
+      await this.$auth.logout().then(() => {
+        this.$router.push('/login')
+      })
     },
   },
 }

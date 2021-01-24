@@ -1,8 +1,14 @@
 <template>
   <div>
-    <Nuxt />
+    <nuxt-link to="/tester">test</nuxt-link>
+    <nuxt-link to="/">Index</nuxt-link>
+    <Nuxt keep-alive />
   </div>
 </template>
+
+<script>
+export default {}
+</script>
 
 <style>
 html {

@@ -64,9 +64,9 @@ export default {
   },
 
   proxy: {
-    '/laravel': {
-      target: 'http://localhost:8000',
-      pathRewrite: { '^/laravel': '/' },
+    '/jieBackpain': {
+      target: 'http://localhost:8000/api',
+      pathRewrite: { '^/jieBackpain': '/' },
     },
   },
 
@@ -86,7 +86,9 @@ export default {
 
   tailwindcss: {
     theme: {},
-    variants: {},
+    extend: {
+      tableLayout: ['hover', 'focus'],
+    },
     plugins: [],
     purge: {
       enabled: process.env.NODE_ENV === 'production',

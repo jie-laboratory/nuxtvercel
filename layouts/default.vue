@@ -2,6 +2,7 @@
   <div>
     <nuxt-link to="/tester">test</nuxt-link>
     <nuxt-link to="/">Index</nuxt-link>
+    <nuxt-link to="/crud">Crud</nuxt-link>
     <Nuxt keep-alive />
   </div>
 </template>

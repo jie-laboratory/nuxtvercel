@@ -81,7 +81,6 @@ export default {
     }
   },
   async fetch() {
-    console.log('tester')
     this.posts = await fetch('https://api.nuxtjs.dev/posts').then((res) =>
       res.json()
     )

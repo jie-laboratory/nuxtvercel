@@ -1,3 +1,4 @@
+import webpack from 'webpack'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   // target: 'static',
@@ -40,23 +41,6 @@ export default {
     '@nuxtjs/proxy',
   ],
 
-  auth: {
-    strategies: {
-      laravelSanctum: {
-        provider: 'laravel/sanctum',
-        url: 'http://localhost:8000',
-        endpoints: {
-          login: {
-            url: '/api/login',
-          },
-          logout: {
-            url: '/api/logout',
-          },
-        },
-      },
-    },
-  },
-
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     proxy: true,
@@ -67,6 +51,27 @@ export default {
     '/jieBackpain': {
       target: 'http://localhost:8000/api',
       pathRewrite: { '^/jieBackpain': '/' },
+    },
+    '/pythonista': {
+      target: 'http://localhost:8000/',
+      pathRewrite: { '^/pythonista': '/' },
+    },
+  },
+
+  auth: {
+    strategies: {
+      laravelSanctum: {
+        provider: 'laravel/sanctum',
+        url: 'http://localhost:3000/pythonista',
+        endpoints: {
+          login: {
+            url: '/api/login',
+          },
+          logout: {
+            url: '/api/logout',
+          },
+        },
+      },
     },
   },
 
@@ -82,7 +87,15 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    plugins: [
+      new webpack.ProvidePlugin({
+        // global modules
+        $: 'jquery',
+        _: 'lodash',
+      }),
+    ],
+  },
 
   tailwindcss: {
     theme: {},

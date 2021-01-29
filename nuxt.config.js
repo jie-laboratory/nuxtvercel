@@ -49,11 +49,11 @@ export default {
 
   proxy: {
     '/jieBackpain': {
-      target: '206.189.43.113:80/api',
+      target: 'http://206.189.43.113/api',
       pathRewrite: { '^/jieBackpain': '/' },
     },
     '/pythonista': {
-      target: '206.189.43.113:80',
+      target: 'http://206.189.43.113',
       pathRewrite: { '^/pythonista': '/' },
     },
   },
@@ -62,7 +62,7 @@ export default {
     strategies: {
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: 'http://206.189.43.113:80',
+        url: 'http://206.189.43.113',
         endpoints: {
           login: {
             url: '/api/login',

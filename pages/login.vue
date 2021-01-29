@@ -42,7 +42,7 @@ export default {
       const vm = this
       vm.message = 'loading...'
       await this.$axios
-        .$post('/laravel/api/register', {
+        .$post('/jieBackpain/api/register', {
           email: vm.email,
           password: vm.password,
           name: 'test',

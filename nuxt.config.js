@@ -49,11 +49,11 @@ export default {
 
   proxy: {
     '/jieBackpain': {
-      target: 'http://localhost:8000/api',
+      target: '206.189.43.113:80/api',
       pathRewrite: { '^/jieBackpain': '/' },
     },
     '/pythonista': {
-      target: 'http://localhost:8000/',
+      target: '206.189.43.113:80',
       pathRewrite: { '^/pythonista': '/' },
     },
   },
@@ -62,7 +62,7 @@ export default {
     strategies: {
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: 'http://localhost:3000/pythonista',
+        url: 'http://206.189.43.113:80',
         endpoints: {
           login: {
             url: '/api/login',
